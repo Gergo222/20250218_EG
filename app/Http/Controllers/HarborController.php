@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Harbor;
+use App\Models\Ship;
 use Illuminate\Http\Request;
 
 class HarborController extends Controller
@@ -29,5 +30,12 @@ class HarborController extends Controller
     public function delete(Harbor $harbor){
         $harbor->delete();
         return response()->json("", 204);
+    }
+
+    public function parkOpen(Harbor $harbor){
+        $harbor->open = !$harbor->open;
+        $harbor->save();
+
+        return response()->json($harbor);
     }
 }

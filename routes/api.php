@@ -28,6 +28,8 @@ Route::group([
     Route::post("/", "create");
     Route::put("/{harbor}", "update");
     Route::delete("/{harbor}", "delete");
+
+    Route::post("/open/{harbor}", "parkOpen");
 });
 
 Route::group([
