@@ -18,4 +18,8 @@ class Ship extends Model
     public function harbor(){
         return $this->belongsTo(Ship::class);
     }
+
+    public function owners(){
+        return $this->belongsToMany(Owner::class, "owner_ships");
+    }
 }

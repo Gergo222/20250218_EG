@@ -9,6 +9,7 @@ class OwnerController extends Controller
 {
     public function getAll(){
         return Owner::query()
+            ->with("ships")
             ->get();
     }
 

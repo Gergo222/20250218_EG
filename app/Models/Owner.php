@@ -10,4 +10,8 @@ class Owner extends Model
     use HasFactory;
 
     protected $fillable = ["name", "address", "phone"];
+
+    public function ships(){
+        return  $this->belongsTo(Ship::class, "owner_ships");
+    }
 }
